@@ -7,14 +7,14 @@ export default function Card({ location, title, paragraph }: { location: string,
 
     return (
         <div>
-            <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-72">
+            <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-lg shadow-black/20 bg-clip-border rounded-xl w-64">
                 <div
-                    className="relative h-56 mx-4 -mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
-                    <img
+                    className="h-32 mx-4 overflow-clip items-center text-white shadow-lg rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+                    <img className="object-center "
                         src={`${process.env.NEXT_PUBLIC_API_URL}/${location}`}
                         alt={`${process.env.NEXT_PUBLIC_API_URL}/${location}`} />
                 </div>
-                <div className="p-6">
+                <div className="px-6 py-2">
                     <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
                         {title}
                     </h5>

@@ -1,4 +1,5 @@
 'use client'
+import Footer from "@/components/footer";
 import NavigationBar from "@/components/navigation";
 
 
@@ -14,6 +15,7 @@ export default function RootLayout({
     <div>
         <NavigationBar/>
         {children}
+        <Footer/>
     </div>
   );
 }
