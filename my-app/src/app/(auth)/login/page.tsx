@@ -94,7 +94,7 @@ export default function LoginPage() {
                 </div>
                 <button className='select-none flex flex-row justify-evenly rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none' type='submit' >Register <Loading load={load}/></button>
                 <div className='mx-auto  flex flex-row gap-x-1'>
-                    <p className='text-gray-700'>If you havn't registerd then</p><Link className='text-blue-700' href='/register' >regsiter</Link>
+                    <p className='text-gray-700'>If you havn&apos;t registerd then</p><Link className='text-blue-700' href='/register' >regsiter</Link>
                 </div>
             </div>
         </form>
