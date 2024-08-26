@@ -12,13 +12,18 @@ app.use(cors({
     methods: ['GET', 'POST'],
     credentials: true
 }))
+
+
+
 dotenv.config();
 app.use('/uploads', express.static('uploads'))
 app.use(cookieParser())
 dbConnect();
 
-app.use(express.json())
 
+app.use(express.json({
+    limit : '20mb',
+}))
 
 app.get('/', (req, res)=>{
     console.log('client hit /')

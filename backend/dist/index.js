@@ -42,7 +42,9 @@ dotenv.config();
 app.use('/uploads', express_1.default.static('uploads'));
 app.use((0, cookie_parser_1.default)());
 (0, database_js_1.default)();
-app.use(express_1.default.json());
+app.use(express_1.default.json({
+    limit: '20mb',
+}));
 app.get('/', (req, res) => {
     console.log('client hit /');
     res.send('working fine');

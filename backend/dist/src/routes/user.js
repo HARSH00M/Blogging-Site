@@ -22,18 +22,18 @@ const router = (0, express_1.Router)();
 router.post('/register', multer_1.profile.single('pic'), (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b;
     try {
-        console.log(req.file);
         if (!req.file) {
             res.status(413).json(`File not uploaded!, Please 
                             attach jpeg file under 5 MB`);
             return;
         }
         const userFound = yield user_1.default.findOne({ email: req.body.email });
+        console.log(req.body);
         if (userFound) {
             throw new Error("User already exist");
         }
         const newUser = new user_1.default({
-            name: req.body.name,
+            name: req.body.username,
             email: req.body.email,
             password: req.body.password,
             title: req.body.title,

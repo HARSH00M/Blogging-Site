@@ -18,22 +18,22 @@ interface IUserType {
 }
 
 
-router.post('/register', profile.single('pic'), async (req: Request<never, IUser>, res: Response) => {
+router.post('/register', profile.single('pic'), async (req: Request, res: Response) => {
     try {
-        console.log(req.file)
         if (!req.file) {
             res.status(413).json(`File not uploaded!, Please 
                             attach jpeg file under 5 MB`);
             return;
         }
         const userFound = await User.findOne({ email: req.body.email });
+        console.log(req.body)
 
         if (userFound) {
             throw new Error("User already exist")
         }
 
         const newUser = new User({
-            name: req.body.name,
+            name: req.body.username,
             email: req.body.email,
             password: req.body.password,
             title: req.body.title,
