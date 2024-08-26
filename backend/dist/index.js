@@ -50,4 +50,4 @@ app.get('/', (req, res) => {
     res.send('working fine');
 });
 app.use(master_js_1.default);
-app.listen(process.env.PORT, () => { console.log("running on 4000"); });
+app.listen(process.env.PORT, () => { console.log("running on "+process.env.PORT); });
