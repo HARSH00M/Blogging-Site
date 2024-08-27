@@ -16,7 +16,7 @@ const express_1 = require("express");
 const multer_1 = require("../config/multer");
 const router = (0, express_1.Router)();
 const fs_1 = __importDefault(require("fs"));
-const blog_1 = __importDefault(require("../model/Blog"));
+const blog_1 = __importDefault(require("../model/blog"));
 const authorization_1 = require("../middleware/authorization");
 router.get('/all', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -67,7 +67,6 @@ router.post('/create', multer_1.thumbnail.single('image'), (req, res) => __await
         });
     }
     catch (error) {
-        console.log(error);
         res.status(500).send({
             message: "Something went wrong"
         });
@@ -101,7 +100,6 @@ router.post('/update', authorization_1.Auth, multer_1.thumbnail.single('image'),
         });
     }
     catch (error) {
-        console.log(error);
         res.status(500).send({
             message: "Something went wrong",
         });
@@ -111,7 +109,6 @@ router.post('/user', (req, res) => __awaiter(void 0, void 0, void 0, function* (
     var _a;
     try {
         const userId = (_a = req.body) === null || _a === void 0 ? void 0 : _a.userId;
-        console.log(userId);
         const response = yield blog_1.default.find({ userId });
         if (!response) {
             throw new Error("Error while fetching from Database");

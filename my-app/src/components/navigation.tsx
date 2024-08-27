@@ -62,7 +62,7 @@ export default function NavigationBar() {
                         </div>
                         :
                         <div className='flex gap-x-5'>
-                            <Link href='/create' className='hidden px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block'>Create</Link>
+                            <Link href='/create' className='px-4 py-2 flex items-center font-sans text-xs font-bold  bg-green-500 text-white uppercase transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none '>Create Blog</Link>
                             <Logout />
                             <Avatar location={context?.user.profileImage} />
                         </div>

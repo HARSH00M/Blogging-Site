@@ -40,7 +40,7 @@ export default function RegisterPage() {
             const title = titleRef.current.value;
 
 
-            console.log(email, password, description, username, title, image.name, image.type, image.size);
+            // console.log(email, password, description, username, title, image.name, image.type, image.size);
 
             setLoad(true);
 
@@ -61,11 +61,6 @@ export default function RegisterPage() {
               }
             )
             const data = await response.json();
-            console.log(data)
-
-            console.log(data)
-
-
             
             // Use FormData to send data including the image
             
@@ -83,7 +78,9 @@ export default function RegisterPage() {
                 descriptionRef.current.value = ''
 
 
-            } else 
+            } else {
+                toast.error(data)
+            }
             setLoad(false)
 
         }

@@ -32,7 +32,7 @@ export default function Home() {
           </section>
           <section className='border-t border-gray-600 mt-5 py-4 '>
             
-            <h3 className='text-2xl   font-serif font-semibold text-black'>Others</h3>
+            <h3 className='text-2xl font-serif font-semibold text-black'>Others</h3>
             <Others/>
           </section>
         </div>

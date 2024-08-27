@@ -1,6 +1,5 @@
 // middleware.js
 import { NextRequest, NextResponse } from 'next/server';
-import { parse } from 'cookie';
 
 export function middleware(req : NextRequest) {
     const { pathname } = req.nextUrl;
@@ -11,14 +10,7 @@ export function middleware(req : NextRequest) {
         return NextResponse.next();
     }
 
-    // Parse the cookies from the incoming request headers
-    const cookies = parse(req.headers.get('cookie') || '');
-    const authToken = cookies.authToken;
-
-    // If no auth token is found, redirect to login
-    if (!authToken) {
-        // return NextResponse.redirect(new URL('/login', req.url));
-    }
+   
 
     // if (pathname.match('/')) {
     //     return NextResponse.redirect(new URL('/home', req.url))

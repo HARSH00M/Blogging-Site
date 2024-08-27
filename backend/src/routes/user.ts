@@ -26,7 +26,6 @@ router.post('/register', profile.single('pic'), async (req: Request, res: Respon
             return;
         }
         const userFound = await User.findOne({ email: req.body.email });
-        console.log(req.body)
 
         if (userFound) {
             throw new Error("User already exist")
@@ -85,7 +84,6 @@ router.post('/login', async (req: Request<never, ILoginUser>, res: Response) => 
             { $match: { _id: user._id } },
             { $project: { password: 0 } }
         ]);
-        console.log(loggedInUser[0])
         const token = AssignCookie(loggedInUser[0]._id,loggedInUser[0].email, process.env.PRIVATE_KEY!)
         res.json({
             message: "Logined successfully",
@@ -104,7 +102,6 @@ router.post('/login', async (req: Request<never, ILoginUser>, res: Response) => 
 router.post("/validate", (req : Request, res)=>{
     try{
         const token = req.cookies?.auth_token;
-        console.log(token)
         if(!token)
             throw new Error();
 
@@ -128,7 +125,6 @@ router.get('/authors', async (req, res)=>{
             { $match : {}},
             { $project: { password: 0 } }
         ]);
-        console.log(AllUsers);
         return res.json({
             data : AllUsers,
         })

@@ -5,7 +5,7 @@ export default function AuthorCard({location, description, title, name} : {name 
   let desc  = description?.slice(0, 150).concat('.....')
   return (
     <div
-  className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+  className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-lg shadow-gray-400 px-4">
   <div
     className="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
     <img

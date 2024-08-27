@@ -75,7 +75,6 @@ router.post('/create', thumbnail.single('image'), async (req: Request<never, IBl
         });
 
     } catch (error) {
-        console.log(error);
         res.status(500).send({
             message: "Something went wrong"
         });
@@ -117,7 +116,6 @@ router.post('/update', Auth, thumbnail.single('image'), async (req: Request<neve
         });
 
     } catch (error) {
-        console.log(error);
         res.status(500).send({
             message: "Something went wrong",
            
@@ -128,7 +126,6 @@ router.post('/update', Auth, thumbnail.single('image'), async (req: Request<neve
 router.post('/user', async (req : Request, res : Response)=>{
     try{
         const userId = req.body?.userId;
-        console.log(userId)
         const response = await Blog.find({userId});
         if(!response){
             throw new Error("Error while fetching from Database");
