@@ -33,13 +33,14 @@ const database_js_1 = __importDefault(require("./src/config/database.js"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
+dotenv.config();
 app.use((0, cors_1.default)({
-    origin: ["http://localhost:3000"],
+    origin: '*',
+    // origin : ["http://localhost:3000", process.env.FRONTEND_URL!],
     methods: ['GET', 'POST'],
     credentials: true
 }));
-dotenv.config();
-app.use('/uploads', express_1.default.static('uploads'));
+app.use('/uploads', express_1.default.static('./uploads'));
 app.use((0, cookie_parser_1.default)());
 (0, database_js_1.default)();
 app.use(express_1.default.json({
@@ -50,4 +51,4 @@ app.get('/', (req, res) => {
     res.send('working fine');
 });
 app.use(master_js_1.default);
-app.listen(process.env.PORT, () => { console.log("running on "+process.env.PORT); });
+app.listen(process.env.PORT, () => { console.log("running on 4000"); });
