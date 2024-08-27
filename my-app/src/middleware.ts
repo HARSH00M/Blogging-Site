@@ -20,9 +20,9 @@ export function middleware(req : NextRequest) {
         // return NextResponse.redirect(new URL('/login', req.url));
     }
 
-    if (pathname.match('/')) {
-        return NextResponse.redirect(new URL('/home', req.url))
-    }
+    // if (pathname.match('/')) {
+    //     return NextResponse.redirect(new URL('/home', req.url))
+    // }
     // Continue to the requested page
     return NextResponse.next();
 }

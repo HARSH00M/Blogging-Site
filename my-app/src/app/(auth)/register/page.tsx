@@ -55,7 +55,7 @@ export default function RegisterPage() {
             }
             console.log("form data : ", formData);
 
-            const response = await fetch('http://localhost:4000/user/register',{
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/register`,{
                 body : formData,
                 method : 'POST',
               }

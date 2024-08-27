@@ -1,7 +1,7 @@
-import Image from "next/image";
+import NavigationBar from "@/components/navigation";
 
 export default function Home() {
   return (
-    <main>Hello</main>
+    <NavigationBar/>
   );
 }
