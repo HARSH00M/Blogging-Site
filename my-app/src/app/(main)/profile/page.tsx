@@ -42,7 +42,7 @@ export default function Profile() {
             setBlogs(blog.data)
         }
         fetchData();
-    }, [])
+    }, [userId])
     // var allBlogs:  = blog.data
     return (
 

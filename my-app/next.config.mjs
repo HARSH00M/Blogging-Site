@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    env : {
-        REQUEST_URL : "localhost:4000",
-    },
     images: {
-        domains: ['localhost'],
-      },
+        domains: ['blogging-site-utb8.onrender.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'blogging-site-utb8.onrender.com/',
+                port: "",
+            },
+        ]
+    },
+    env: {
+        REQUEST_URL: "https://blogging-site-utb8.onrender.com/",
+    },
+
 };
 
 export default nextConfig;
