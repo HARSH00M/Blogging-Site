@@ -2,6 +2,7 @@
 import { UserContext } from '@/context/userContext';
 import React, { useContext, useEffect, useState } from 'react'
 import Card from '@/components/blog/card';
+import Image from 'next/image';
 
 interface IBlogs {
     imagePath: string,
@@ -50,9 +51,9 @@ export default function Profile() {
                 className="relative flex w-full max-w-[20rem] md:max-w-[34rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
                 <div
                     className="relative flex items-center gap-4 pt-0 pb-4 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
-                    <img
+                    <Image width={500} height={350}
                         src={`${process.env.NEXT_PUBLIC_API_URL}/${location}`}
-                        alt={location}
+                        alt={location!}
                         className="relative inline-block h-[58px] w-[58px] !rounded-full  object-cover object-center" />
                     <div className="flex w-full flex-col gap-0.5">
                         <div className="flex items-center justify-between">

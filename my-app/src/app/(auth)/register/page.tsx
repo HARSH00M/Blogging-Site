@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { FormEvent } from 'react'
-
+import Image from 'next/image';
 
 
 import toast from 'react-hot-toast';
@@ -95,7 +95,8 @@ export default function RegisterPage() {
         <form className='bg-green-200 p-8 gap-x-0 md:gap-x-10 gap-y-5 md:gap-y-0  flex flex-col md:flex-row justify-center items-center rounded-lg shadow-xl' onSubmit={(e) => handleSubmit(e)}>
 
 
-            <img src='/images/login.jpg' className='rounded-lg w-[200px] md:w-[400px]' />
+            <Image width={500} height={350}
+             alt='pic' src='/images/login.jpg' className='rounded-lg w-[200px] md:w-[400px]' />
             <div className="md:w-72 flex flex-col gap-y-6 ">
                 <div className="relative w-full min-w-[200px] h-10">
                     <input

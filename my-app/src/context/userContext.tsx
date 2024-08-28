@@ -20,8 +20,6 @@ export const UserContext = React.createContext<UserFunctionsT|null>(null);
 
 export default function UserContextProvider(props : {children : ReactElement}) {
     const [user, setUser] = useState<UserT|null>(null);
-    console.log("from the context : ", user);
-    
   return (
     <UserContext.Provider value={{user, setUser}}>{props.children}</UserContext.Provider>      
 )

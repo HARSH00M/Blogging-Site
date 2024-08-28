@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function Card({ location, title, paragraph }: { location: string, title: string, paragraph: string }) {
@@ -10,7 +11,7 @@ export default function Card({ location, title, paragraph }: { location: string,
             <div className="relative flex flex-col mt-6 text-gray-700 bg-white shadow-lg shadow-black/20 bg-clip-border rounded-xl w-64">
                 <div
                     className="h-32 mx-4 overflow-clip items-center text-white shadow-lg rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
-                    <img className="object-center "
+                    <Image className="object-center " width={500} height={350}
                         src={`${process.env.NEXT_PUBLIC_API_URL}/${location}`}
                         alt={`${process.env.NEXT_PUBLIC_API_URL}/${location}`} />
                 </div>
