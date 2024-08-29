@@ -4,7 +4,6 @@ import React from 'react'
 export default function Card({ location, title, paragraph }: { location: string, title: string, paragraph: string }) {
 
     let pgh = paragraph[0].slice(0, 150).concat('.....')
-    const src = `${process.env.NEXT_PUBLIC_API_URL}/${location}`
 
     return (
         <div>
@@ -12,8 +11,7 @@ export default function Card({ location, title, paragraph }: { location: string,
                 <div
                     className="h-32 mx-4 overflow-clip items-center text-white shadow-lg rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
                     <Image className="object-center " width={500} height={350}
-                    loader={() => src}
-                        src={src}
+                        src={`${process.env.NEXT_PUBLIC_API_URL}/${location}`}
                         alt={`${process.env.NEXT_PUBLIC_API_URL}/${location}`} />
                 </div>
                 <div className="px-6 py-2">
